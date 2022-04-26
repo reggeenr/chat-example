@@ -8,6 +8,9 @@ COPY . ./
 # Install production dependencies.
 RUN npm install
 
-EXPOSE 3000
 
 CMD [ "npm", "start" ]
+
+
+# EXPOSE must be last command in Dockerfile. Otherwise this information will not be exposed as .ContainerConfig.ExposedPorts
+EXPOSE 3000
